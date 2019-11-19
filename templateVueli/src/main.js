@@ -6,7 +6,6 @@ import router from './router'
 import store from './store'
 import './assets/css/entry.less'
 import cookies from 'js-cookie'
-import VueLazyload from 'vue-lazyload'
 import gv from './assets/js/globalVar'
 import gm from './assets/js/globalFun'
 import qs from 'qs'
@@ -44,19 +43,11 @@ Vue.use(ElementUI)
 Vue.use(gm)
 // img懒加载,使用：img src='....'换成v-lazy='....'
 // element ui el-image可添加懒加载属性
-Vue.use(VueLazyload)
-// 配置
-// Vue.use(VueLazyload, {
-//   preLoad: 1.3,
-//   error: '....png',//加载错误显示的图片
-//   loading: '../loading.gif',//loading动图
-//   attempt: 1
-//   })
 
 // 全局指令
 // 防止按钮连续点击重复提交，使用button标签添加v-preventDack或者v-preventDack='3000'，数字为自定义时间，默认1500
 Vue.directive('preventDack', {
-  inserted (el, binding) {
+  inserted(el, binding) {
     el.addEventListener('click', () => {
       if (!el.disabled) {
         el.disabled = true

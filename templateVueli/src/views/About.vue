@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1 id="mm">{{msg}}</h1>
+    <h1 id="mm">{{ msg }}</h1>
     <button @click="changeColor">click</button>
   </div>
 </template>
@@ -9,16 +9,16 @@
 import $ from 'jquery'
 export default {
   name: 'about',
-  data () {
+  data() {
     return {
       msg: this.$store.state.msg
     }
   },
-  created () {
+  created() {
     console.log(this.cookies.get('testdata'))
   },
   methods: {
-    changeColor: function () {
+    changeColor: function() {
       $('#mm').css('color', '#f00')
     }
   }
